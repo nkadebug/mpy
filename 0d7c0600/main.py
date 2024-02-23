@@ -1,5 +1,5 @@
 from time import sleep_ms
-from machine import print
+from machine import Pin
 
 led = Pin(2,Pin.OUT)
 
