@@ -8,4 +8,4 @@ while True:
     led.on()
     sleep_ms(10)
     led.off()
-    sleep_ms(2000)
+    sleep_ms(3000)
