@@ -1,5 +1,5 @@
 from webrepl import start
-start()
+#start()
 
 from gc import collect
-collect()
+#collect()
