@@ -3,10 +3,12 @@ from json import dumps
 from machine import unique_id
 from ubinascii import hexlify,a2b_base64
 
+api = "https://api.github.com/repos/nkadebug/mpy/contents/"
+headers = {"User-Agent":"MPY Device"}
 did = hexlify(unique_id()).decode('utf-8')
 
 def getPath(path):
-    res = get("https://api.github.com/repos/nkadebug/mpy/contents/"+path,headers={"User-Agent":"MPY Device"})
+    res = get(api+path,headers=headers)
     try:
         folder = res.json()
     except:
@@ -14,7 +16,7 @@ def getPath(path):
         
     for item in folder:
         if item['type']=='file':
-            res = get("https://api.github.com/repos/nkadebug/mpy/contents/"+item['path'],headers={"User-Agent":"MPY Device"})
+            res = get(api+item['path'],headers=headers)
             
             try:
                 file = res.json()
