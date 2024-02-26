@@ -1,3 +1,5 @@
-print('boot.py')
-import webrepl
-webrepl.start()
+from webrepl import start
+start()
+
+from gc import collect
+collect()
